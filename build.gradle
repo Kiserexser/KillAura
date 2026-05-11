@@ -1,21 +1,26 @@
-plugins {
-    id 'fabric-loom' version '1.7.4'
-    id 'java'
+buildscript {
+    repositories {
+        maven {
+            name = "Fabric"
+            url = "https://maven.fabricmc.net/"
+        }
+    }
+    dependencies {
+        classpath "net.fabricmc:fabric-loom:1.7.4"
+    }
 }
+
+apply plugin: "fabric-loom"
 
 version = "1.0.0"
 group = "com.swill.killaura"
 
-base {
-    archivesName = "killaura"
-}
-
 repositories {
-    mavenCentral()
     maven {
         name = "Fabric"
         url = "https://maven.fabricmc.net/"
     }
+    mavenCentral()
 }
 
 dependencies {
